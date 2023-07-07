@@ -12,5 +12,7 @@ namespace DONET_RPG.Services.CharacterService
         Task<ServiceResponse<GetCharacterDto>> GetCharacterById(int id);
         Task<ServiceResponse<List<GetCharacterDto>>> AddCharacter(AddCharacterDto character);
         Task<ServiceResponse<UpdateCharacterDto>> UpdateCharacter(UpdateCharacterDto updatedCharacter);
+        Task<ServiceResponse<List<GetCharacterDto>>> DeleteCharacter(int id);
+        
     }
 }

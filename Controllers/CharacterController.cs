@@ -52,5 +52,18 @@ namespace DONET_RPG.Controllers
             return Ok(result);
         } 
 
+        [HttpDelete]
+        [Route("DeleteCharacter/{id}")]
+        public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> DeleteCharacter(int id)
+        {
+            var result = await _service.DeleteCharacter(id);
+            if (result.Data is null)
+            {
+                return NotFound(result);
+            }
+                
+            return Ok(result);
+        } 
+
     }
 }

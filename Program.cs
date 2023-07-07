@@ -1,10 +1,12 @@
 global using DONET_RPG.Models;
 global using DONET_RPG.Services.CharacterService;
+global using Microsoft.EntityFrameworkCore;
+global using DONET_RPG.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<DataContext>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
